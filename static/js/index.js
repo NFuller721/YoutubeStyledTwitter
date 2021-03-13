@@ -49,7 +49,7 @@ let LoadPosts = () => {
       for (var j = 0; j < TextArray.length; j++) {
         let Word = TextArray[j];
 
-        if (Word.slice(0,7) == "http://") {
+        if (Word.slice(0,7) == "http://" || Word.slice(0,7) == "https://") {
           LinkText = LinkText.concat(`<a href="${Word}">${Word}</a>`)
         } else {
           TextArrayWithoutLinks.push(Word);
