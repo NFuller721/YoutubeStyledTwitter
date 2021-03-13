@@ -130,7 +130,7 @@ def Api(Key, Option):
                 AdminPassword = request.form['AdminPassword']
 
                 if AdminUsername == "ahhgfdyueighrfegfvw" and AdminPassword == "yfctgwhegfvcuywhjefgwf":
-                    Delete(Database=Database, Cursor=Cursor, table="Posts")
+                    Delete(Database=Database, Cursor=Cursor, table="Posts", id="All")
 
                     Database.close()
                     return {"Response": "Deleted All Posts"}
