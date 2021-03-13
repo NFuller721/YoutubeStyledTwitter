@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>{{Hashtag}}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript">
+      let Hashtag = "#{{Hashtag}}"
+      let thisUserId = {{id}}
+      let deletablePosts = {{deletablePosts}}
+    </script>
+    <script src="{{ url_for('static', filename='js/hashtags.js') }}" charset="utf-8"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a>
+    </header>
+    <div class="Posts">
+
+    </div>
+  </body>
+</html>

@@ -1,31 +1,31 @@
 let CreatePost = (postText, userID) => {
-  $.post("Api/34567654/CreatePost", {"postText": postText, "userID": userID}, (data) => {
+  $.post("/Api/34567654/CreatePost", {"postText": postText, "userID": userID}, (data) => {
     console.log(data);
   });
 }
 
 let ReadPost = (id) => {
-  return $.post("Api/34567654/ReadPost", {"id": id});
+  return $.post("/Api/34567654/ReadPost", {"id": id});
 }
 
 let ReadAllPosts = () => {
-  return $.post("Api/34567654/ReadAllPosts", {});
+  return $.post("/Api/34567654/ReadAllPosts", {});
 }
 
 let UpdatePost = (id, postText) => {
-  $.post("Api/34567654/UpdatePost", {"id": id, "postText": postText}, (data) => {
+  $.post("/Api/34567654/UpdatePost", {"id": id, "postText": postText}, (data) => {
     console.log(data);
   });
 }
 
 let DeletePost = (id) => {
-  $.post("Api/34567654/DeletePost", {"id": id}, (data) => {
+  $.post("/Api/34567654/DeletePost", {"id": id}, (data) => {
     console.log(data);
   });
 }
 
 let DeleteAllPosts = (AdminUsername, AdminPassword) => {
-  $.post("Api/34567654/DeleteAllPosts", {"AdminUsername": AdminUsername, "AdminPassword": AdminPassword}, (data) => {
+  $.post("/Api/34567654/DeleteAllPosts", {"AdminUsername": AdminUsername, "AdminPassword": AdminPassword}, (data) => {
     console.log(data);
   });
 }
@@ -49,10 +49,12 @@ let LoadPosts = () => {
   ReadAllPosts().done((data) => {
     var Posts = data.Response.Posts;
 
+
     Posts.reverse()
 
     for (var i = 0; i < Posts.length; i++) {
       let Post = Posts[i];
+      let ShouldBeIncluded = false;
 
       let TextArray = Post.postText.split(" ")
 
@@ -66,6 +68,9 @@ let LoadPosts = () => {
         if (Word.slice(0,7) == "http://" || Word.slice(0,8) == "https://") {
           LinkText = LinkText.concat(`<a href="${Word}">${Word}</a>`)
         } else if (Word.slice(0,1) == "#") {
+          if (Word == Hashtag) {
+            ShouldBeIncluded = true;
+          }
           Hashtags = Hashtags.concat(`<a href="/Hashtags/${Word.slice(1)}">${Word}</a>`)
         } else {
           TextArrayWithoutLinks.push(Word);
@@ -88,25 +93,27 @@ let LoadPosts = () => {
       } else {
         EllipsisBox = ``
       }
+      if (ShouldBeIncluded) {
 
-      $(".Posts").append(`
-        <div class="Post">
-          <div class="UserPicture">
-            <img id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="32" width="32" src="${Post.userPicture}">
-          </div>
-          <div class="PostContent">
-            <div class="PostUsername">
+        $(".Posts").append(`
+          <div class="Post">
+            <div class="UserPicture">
+              <img id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="32" width="32" src="${Post.userPicture}">
+            </div>
+              <div class="PostContent">
+              <div class="PostUsername">
               <p>${Post.userName}</p>
             </div>
-            <div class="PostText">
-              <p>${TextArrayWithoutLinks.join(" ")}</p>
-              ${LinkText}
-              ${Hashtags}
+              <div class="PostText">
+                <p>${TextArrayWithoutLinks.join(" ")}</p>
+                ${LinkText}
+                ${Hashtags}
+              </div>
             </div>
+            ${EllipsisBox}
           </div>
-          ${EllipsisBox}
-        </div>
-      `);
+          `);
+      }
     }
   });
 }

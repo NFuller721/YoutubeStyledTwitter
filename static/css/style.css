@@ -60,6 +60,9 @@ body .Posts .Post .PostContent {
 body .Posts .Post .PostContent div {
   margin: 5px;
 }
+body .Posts .Post .PostContent div a {
+  margin: 2px;
+}
 body .Posts .Post .Ellipsis {
   flex-grow: 1;
   display: flex;
