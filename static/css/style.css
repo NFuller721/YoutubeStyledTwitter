@@ -101,6 +101,9 @@ body .Posts .Post:hover .Ellipsis input[type=image] {
   }
 }
 @media screen and (min-width: 0px) and (max-width: 380px) {
+  body .Posts {
+    margin: 12px;
+  }
   body html, body body {
     overflow-x: hidden;
   }
@@ -110,7 +113,7 @@ body .Posts .Post:hover .Ellipsis input[type=image] {
   }
   body .postBox {
     height: 50px;
-    margin: 0px 18px;
+    margin: 0px 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
   }
