@@ -24,11 +24,8 @@ let DeletePost = (id) => {
   });
 }
 
-
-$(document).ready(() => {
-  $("#Upload").click(() => {
-    CreatePost($("#PostText").val(), $("#UserID").val())
-  });
+let LoadPosts = () => {
+  $(".Posts").find(".Post").remove()
 
   ReadAllPosts().done((data) => {
     let Posts = data.Response.Posts;
@@ -53,4 +50,17 @@ $(document).ready(() => {
       `);
     }
   });
+}
+
+
+$(document).ready(() => {
+  $("#Upload").click(() => {
+
+    CreatePost($("#PostText").val(), $("#UserID").val())
+    $("#PostText").val("")
+    LoadPosts()
+
+  });
+
+  LoadPosts()
 });
