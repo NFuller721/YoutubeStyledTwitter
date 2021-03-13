@@ -5,7 +5,12 @@ from MySQLPackage import *
 from auth.main import Auth
 
 
-Connection = Connection(host="127.0.0.1", username="Noah721", password="Satchel21", databaseName="YoutubeStyledTwitter")
+Connection = Connection(
+    host="127.0.0.1",
+    username="Noah721",
+    password="Satchel21",
+    databaseName="YoutubeStyledTwitter"
+)
 
 def Start():
     Connection.run()
@@ -31,14 +36,24 @@ def Api(Key, Option):
                 userID = int(request.form['userID'])
                 likes = 0
 
-                Create(Database=Database, Cursor=Cursor, table="Posts", dict={
-                    "postText": postText,
-                    "userID": userID,
-                    "likes": likes
-                })
+                LoggedInID = None
 
+                Users = Read(Database=Database, Cursor=Cursor, table="Users")
+                for User in Users:
+                    if User[1] == session['email']:
+                        LoggedInID = User[0]
+
+                if userID == LoggedInID:
+                    Create(Database=Database, Cursor=Cursor, table="Posts", dict={
+                        "postText": postText,
+                        "userID": userID,
+                        "likes": likes
+                    })
+
+                    Database.close()
+                    return {"Response": "Created Post"}
                 Database.close()
-                return {"Response": "Created Post"}
+                return {"Response": "Not logged in as this user"}
             if Option == "ReadPost":
                 id = int(request.form['id'])
 
@@ -79,19 +94,48 @@ def Api(Key, Option):
                 id = int(request.form['id'])
                 postText = request.form['postText']
 
-                Update(Database=Database, Cursor=Cursor, table="Posts", id=id, dict={
-                    "postText": postText
-                })
+                userID = Read(Database=Database, Cursor=Cursor, table="Posts", id=id)[0][2]
 
+                LoggedInID = None
+
+                Users = Read(Database=Database, Cursor=Cursor, table="Users")
+                for User in Users:
+                    if User[1] == session['email']:
+                        LoggedInID = User[0]
+
+                if userID == LoggedInID:
+                    Update(Database=Database, Cursor=Cursor, table="Posts", id=id, dict={
+                        "postText": postText
+                    })
+
+                    Database.close()
+                    return {"Response": "Updated Post"}
                 Database.close()
-                return {"Response": "Updated Post"}
+                return {"Error": "Not logged in as this user"}
             if Option == "DeletePost":
                 id = int(request.form['id'])
 
-                Delete(Database=Database, Cursor=Cursor, table="Posts", id=id)
+                UserID = Read(Database=Database, Cursor=Cursor, table="Posts", id=id)[0][2]
+                Email = Read(Database=Database, Cursor=Cursor, table="Users", id=UserID)[0][1]
 
+                if session['email'] == Email:
+                    Delete(Database=Database, Cursor=Cursor, table="Posts", id=id)
+
+                    Database.close()
+                    return {"Response": "Deleted Post"}
                 Database.close()
-                return {"Response": "Deleted Post"}
+                return {"Error": "Not logged in as this user"}
+            if Option == "DeleteAllPosts":
+                AdminUsername = request.form['AdminUsername']
+                AdminPassword = request.form['AdminPassword']
+
+                if AdminUsername == "ahhgfdyueighrfegfvw" and AdminPassword == "yfctgwhegfvcuywhjefgwf":
+                    Delete(Database=Database, Cursor=Cursor, table="Posts")
+
+                    Database.close()
+                    return {"Response": "Deleted All Posts"}
+                Database.close()
+                return {"Error": "Wrong Username and Password"}
             Database.close()
             return {"Error": "No function with that name"}
         return {"Error": "Wrong Key"}

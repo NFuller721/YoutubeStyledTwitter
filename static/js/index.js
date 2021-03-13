@@ -24,11 +24,19 @@ let DeletePost = (id) => {
   });
 }
 
+let DeleteAllPosts = (AdminUsername, AdminPassword) => {
+  $.post("Api/34567654/DeleteAllPosts", {"AdminUsername": AdminUsername, "AdminPassword": AdminPassword}, (data) => {
+    console.log(data);
+  });
+}
+
 let LoadPosts = () => {
   $(".Posts").find(".Post").remove()
 
   ReadAllPosts().done((data) => {
-    let Posts = data.Response.Posts;
+    var Posts = data.Response.Posts;
+
+    Posts.reverse()
 
     for (var i = 0; i < Posts.length; i++) {
       let Post = Posts[i];
