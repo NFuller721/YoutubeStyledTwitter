@@ -41,6 +41,21 @@ let LoadPosts = () => {
     for (var i = 0; i < Posts.length; i++) {
       let Post = Posts[i];
 
+      let TextArray = Post.postText.split(" ")
+
+      var LinkText = "";
+      var TextArrayWithoutLinks = [];
+
+      for (var j = 0; j < TextArray.length; j++) {
+        let Word = TextArray[j];
+
+        if (Word.slice(0,7) == "http://") {
+          LinkText = LinkText.concat(`<a href="${Word}">${Word}</a>`)
+        } else {
+          TextArrayWithoutLinks.push(Word);
+        }
+      }
+
       $(".Posts").append(`
         <div class="Post">
           <div class="UserPicture">
@@ -51,7 +66,8 @@ let LoadPosts = () => {
               <p>${Post.userName}</p>
             </div>
             <div class="PostText">
-              <p>${Post.postText}</p>
+              <p>${TextArrayWithoutLinks.join(" ")}</p>
+              ${LinkText}
             </div>
           </div>
         </div>
