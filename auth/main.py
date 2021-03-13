@@ -34,7 +34,7 @@ def Start():
 @Auth.route('/login')
 def index():
     if 'LoggedIn' in session:
-        return redirect('/')
+        return redirect(url_for('index'))
     redirect_uri = url_for('Auth.authorize', _external=True)
     return OAuth2.google.authorize_redirect(redirect_uri)
 
@@ -70,7 +70,7 @@ def authorize():
 
     Database.close()
 
-    return redirect('/')
+    return redirect(url_for('index'))
 
 @Auth.route('/logout')
 def logout():
@@ -82,4 +82,4 @@ def logout():
         session.pop('picture')
     if 'name' in session:
         session.pop('name')
-    return redirect('/')
+    return redirect(url_for('index'))
