@@ -57,6 +57,7 @@ let LoadPosts = () => {
       let TextArray = Post.postText.split(" ")
 
       var LinkText = "";
+      var Hastags = "";
       var TextArrayWithoutLinks = [];
 
       for (var j = 0; j < TextArray.length; j++) {
@@ -64,6 +65,8 @@ let LoadPosts = () => {
 
         if (Word.slice(0,7) == "http://" || Word.slice(0,8) == "https://") {
           LinkText = LinkText.concat(`<a href="${Word}">${Word}</a>`)
+        } else if (Word.slice(0,1) == "#") {
+          Hastags = Hastags.concat(`<a href="hastags/${Word}">${Word}</a>`)
         } else {
           TextArrayWithoutLinks.push(Word);
         }
@@ -96,6 +99,8 @@ let LoadPosts = () => {
             <div class="PostText">
               <p>${TextArrayWithoutLinks.join(" ")}</p>
               ${LinkText}
+              <br>
+              ${hashtags}
             </div>
           </div>
           ${EllipsisBox}
