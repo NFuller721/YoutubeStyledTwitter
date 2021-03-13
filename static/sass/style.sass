@@ -38,7 +38,31 @@ body
     font-weight: $textWeight
     font-size: $textSize
     color: $textColor
-
+  .Posts
+    display: grid
+    grid-auto-rows: 75px
+    margin: 24px
+    height: 525px
+    overflow: scroll
+    .Post
+      display: flex
+      justify-content: flex-start
+      .UserPicture
+        margin: 10px
+        display: flex
+        align-items: center
+        justify-content: center
+        img
+          border-radius: 50%
+      .PostContent
+        display: flex
+        flex-direction: column
+        justify-content: center
+        div
+          margin: 5px
+  @media screen and (max-width: 600px)
+    #NameText
+      display: none
   @media screen and (min-width: 0px) and(max-width: $phoneScreen)
     .postBox
       height: 50px
@@ -48,12 +72,12 @@ body
       .imgContainer
         flex-grow: 1
         display: flex
-        justify-content: center
+        justify-content: space-around
         align-items: center
         img
           border-radius: 50%
       .form
-        flex-grow: 7
+        flex-grow: 6
         display: flex
         padding: 10px
         justify-content: flex-end
@@ -93,12 +117,12 @@ body
       .imgContainer
         flex-grow: 1
         display: flex
-        justify-content: center
+        justify-content: space-around
         align-items: center
         img
           border-radius: 50%
       .form
-        flex-grow: 7
+        flex-grow: 6
         display: flex
         padding: 10px
         justify-content: flex-end
@@ -114,7 +138,7 @@ body
               cursor: pointer
         input[type='text']
           -webkit-appearance: none
-          width: 300px
+          width: 100%
           color: $textColor
           border: 1px solid $border
           background-color: $bodyColor
@@ -139,12 +163,12 @@ body
       .imgContainer
         flex-grow: 1
         display: flex
-        justify-content: center
+        justify-content: space-around
         align-items: center
         img
           border-radius: 50%
       .form
-        flex-grow: 7
+        flex-grow: 6
         display: flex
         padding: 10px
         justify-content: flex-end
@@ -160,7 +184,7 @@ body
               cursor: pointer
         input[type='text']
           -webkit-appearance: none
-          width: 300px
+          width: 100%
           border: 1px solid $border
           border-radius: 0px
           color: $textColor

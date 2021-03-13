@@ -5,27 +5,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-    <script charset="utf-8">
-      // $.get(`/ScreenWidth/${screen.width}`)
-    </script>
+    <script src="{{ url_for('static', filename='js/index.js') }}" charset="utf-8"></script>
   </head>
   <body>
     <header>
-      <a href="">Hello There</a>
+      <a href="">Home</a>
     </header>
     <div class="postBox">
       <div class="imgContainer">
         <img id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="32" width="32" src="{{picture}}">
+        <p id="NameText">{{name}}</p>
       </div>
       <div class="form">
-        <input type="text" placeholder="Post">
-        <input type="submit" value="Send">
+        <input type="text" placeholder="Post" id="PostText">
+        <input type="submit" value="Send" id="Upload">
         <input type="file" id="FileUpload">
+        <input type="hidden" id="UserID" value="{{id}}">
         <label for="FileUpload">
           <img src="https://img.icons8.com/pastel-glyph/24/303030/attachment-file--v1.png"/>
         </label>
       </div>
+    </div>
+    <div class="Posts">
+
     </div>
   </body>
 </html>

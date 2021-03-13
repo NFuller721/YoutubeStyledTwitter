@@ -31,6 +31,39 @@ body p {
   font-size: 14px;
   color: #f9f9f9;
 }
+body .Posts {
+  display: grid;
+  grid-auto-rows: 75px;
+  margin: 24px;
+  height: 525px;
+  overflow: scroll;
+}
+body .Posts .Post {
+  display: flex;
+  justify-content: flex-start;
+}
+body .Posts .Post .UserPicture {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .Posts .Post .UserPicture img {
+  border-radius: 50%;
+}
+body .Posts .Post .PostContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .Posts .Post .PostContent div {
+  margin: 5px;
+}
+@media screen and (max-width: 600px) {
+  body #NameText {
+    display: none;
+  }
+}
 @media screen and (min-width: 0px) and (max-width: 380px) {
   body .postBox {
     height: 50px;
@@ -41,14 +74,14 @@ body p {
   body .postBox .imgContainer {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
   body .postBox .imgContainer img {
     border-radius: 50%;
   }
   body .postBox .form {
-    flex-grow: 7;
+    flex-grow: 6;
     display: flex;
     padding: 10px;
     justify-content: flex-end;
@@ -98,14 +131,14 @@ body p {
   body .postBox .imgContainer {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
   body .postBox .imgContainer img {
     border-radius: 50%;
   }
   body .postBox .form {
-    flex-grow: 7;
+    flex-grow: 6;
     display: flex;
     padding: 10px;
     justify-content: flex-end;
@@ -126,7 +159,7 @@ body p {
   }
   body .postBox .form input[type=text] {
     -webkit-appearance: none;
-    width: 300px;
+    width: 100%;
     color: #f9f9f9;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: #181818;
@@ -156,14 +189,14 @@ body p {
   body .postBox .imgContainer {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
   body .postBox .imgContainer img {
     border-radius: 50%;
   }
   body .postBox .form {
-    flex-grow: 7;
+    flex-grow: 6;
     display: flex;
     padding: 10px;
     justify-content: flex-end;
@@ -184,7 +217,7 @@ body p {
   }
   body .postBox .form input[type=text] {
     -webkit-appearance: none;
-    width: 300px;
+    width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0px;
     color: #f9f9f9;
