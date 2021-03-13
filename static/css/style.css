@@ -101,8 +101,8 @@ body .Posts .Post:hover .Ellipsis input[type=image] {
   }
 }
 @media screen and (min-width: 0px) and (max-width: 380px) {
-  body .Posts {
-    margin: 12px;
+  body .Post {
+    max-width: 332px;
   }
   body html, body body {
     overflow-x: hidden;
@@ -148,7 +148,7 @@ body .Posts .Post:hover .Ellipsis input[type=image] {
   }
   body .postBox .form input[type=text] {
     -webkit-appearance: none;
-    width: 125px;
+    width: 150px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: #181818;
     color: #f9f9f9;
