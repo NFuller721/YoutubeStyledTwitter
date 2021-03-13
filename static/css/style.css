@@ -102,7 +102,7 @@ body .Posts .Post:hover .Ellipsis input[type=image] {
 }
 @media screen and (min-width: 0px) and (max-width: 380px) {
   body .Post {
-    max-width: 332px;
+    max-width: 300px;
   }
   body html, body body {
     overflow-x: hidden;
