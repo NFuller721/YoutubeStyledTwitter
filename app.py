@@ -62,7 +62,7 @@ def ScreenWidthTester(ScreenWidth):
 def index():
     if 'LoggedIn' in session:
         return render_template('index.html', picture=session['picture'])
-    return redirect('/login')
+    return redirect('login')
 
 if __name__ == '__main__':
     App.run()
