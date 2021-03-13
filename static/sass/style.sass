@@ -1,0 +1,177 @@
+$bodyColor: #181818
+$headerColor: rgba(33, 33, 33, 0.98)
+$textColor: #f9f9f9
+$linkColor: #3890db
+$textSize: 14px
+$textWeight: 400
+$font: Arial
+$border: rgba(255, 255, 255, 0.1)
+$iconColor: rgba(255, 255, 255, 0.5)
+$phoneScreen: 380px
+$smallScreen: 820px
+$mediumScreen: 2400px
+
+*
+  margin: 0
+  padding: 0
+  outline: none
+  font-family: $font
+
+body
+  background-color: $bodyColor
+  header
+    height: 50px
+    background-color: $headerColor
+    display: flex
+    align-items: center
+    a
+      font-size: $textSize
+      font-weight: $textWeight
+      color: $textColor
+      margin: 20px
+  a
+    font-weight: $textWeight
+    font-size: $textSize
+    color: $linkColor
+    text-decoration: none
+  p
+    font-weight: $textWeight
+    font-size: $textSize
+    color: $textColor
+
+  @media screen and (min-width: 0px) and(max-width: $phoneScreen)
+    .postBox
+      height: 50px
+      margin: 0px 24px
+      border-bottom: 1px solid $border
+      display: flex
+      .imgContainer
+        flex-grow: 1
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+          border-radius: 50%
+      .form
+        flex-grow: 7
+        display: flex
+        padding: 10px
+        justify-content: flex-end
+        #FileUpload
+          display: none
+        label
+          display: flex
+          justify-content: center
+          align-items: center
+          img
+            margin: 0px 10px
+            &:hover
+              cursor: pointer
+        input[type='text']
+          -webkit-appearance: none
+          width: 150px
+          border: 1px solid $border
+          background-color: $bodyColor
+          color: $textColor
+          border-radius: 0px
+          padding: 10px
+        input[type='submit']
+          -webkit-appearance: none
+          width: 75px
+          background-color: $border
+          border-radius: 0px
+          border: none
+          color: $iconColor
+          &:hover
+            cursor: pointer
+  @media screen and (min-width: $phoneScreen) and(max-width: $smallScreen)
+    .postBox
+      height: 50px
+      margin: 0px 24px
+      border-bottom: 1px solid $border
+      display: flex
+      .imgContainer
+        flex-grow: 1
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+          border-radius: 50%
+      .form
+        flex-grow: 7
+        display: flex
+        padding: 10px
+        justify-content: flex-end
+        #FileUpload
+          display: none
+        label
+          display: flex
+          justify-content: center
+          align-items: center
+          img
+            margin: 0px 10px
+            &:hover
+              cursor: pointer
+        input[type='text']
+          -webkit-appearance: none
+          width: 300px
+          color: $textColor
+          border: 1px solid $border
+          background-color: $bodyColor
+          border-radius: 0px
+          padding: 10px
+        input[type='submit']
+          -webkit-appearance: none
+          width: 100px
+          background-color: $border
+          border-radius: 0px
+          border: none
+          color: $iconColor
+          &:hover
+            cursor: pointer
+  @media screen and (min-width: $smallScreen) and (max-width: $mediumScreen)
+    .postBox
+      height: 50px
+      margin: 0px 24px
+      max-width: 852px
+      border-bottom: 1px solid $border
+      display: flex
+      .imgContainer
+        flex-grow: 1
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+          border-radius: 50%
+      .form
+        flex-grow: 7
+        display: flex
+        padding: 10px
+        justify-content: flex-end
+        #FileUpload
+          display: none
+        label
+          display: flex
+          justify-content: center
+          align-items: center
+          img
+            margin: 0px 10px
+            &:hover
+              cursor: pointer
+        input[type='text']
+          -webkit-appearance: none
+          width: 300px
+          border: 1px solid $border
+          border-radius: 0px
+          color: $textColor
+          background-color: $bodyColor
+          padding: 10px
+        input[type='submit']
+          -webkit-appearance: none
+          width: 100px
+          background-color: $border
+          border: none
+          border-radius: 0px
+          color: $iconColor
+          &:hover
+            cursor: pointer

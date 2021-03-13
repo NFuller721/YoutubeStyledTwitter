@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: Arial;
+}
+
+body {
+  background-color: #181818;
+}
+body header {
+  height: 50px;
+  background-color: rgba(33, 33, 33, 0.98);
+  display: flex;
+  align-items: center;
+}
+body header a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #f9f9f9;
+  margin: 20px;
+}
+body a {
+  font-weight: 400;
+  font-size: 14px;
+  color: #3890db;
+  text-decoration: none;
+}
+body p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #f9f9f9;
+}
+@media screen and (min-width: 0px) and (max-width: 380px) {
+  body .postBox {
+    height: 50px;
+    margin: 0px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+  }
+  body .postBox .imgContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .postBox .imgContainer img {
+    border-radius: 50%;
+  }
+  body .postBox .form {
+    flex-grow: 7;
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+  }
+  body .postBox .form #FileUpload {
+    display: none;
+  }
+  body .postBox .form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .postBox .form label img {
+    margin: 0px 10px;
+  }
+  body .postBox .form label img:hover {
+    cursor: pointer;
+  }
+  body .postBox .form input[type=text] {
+    -webkit-appearance: none;
+    width: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #181818;
+    color: #f9f9f9;
+    border-radius: 0px;
+    padding: 10px;
+  }
+  body .postBox .form input[type=submit] {
+    -webkit-appearance: none;
+    width: 75px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0px;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  body .postBox .form input[type=submit]:hover {
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 380px) and (max-width: 820px) {
+  body .postBox {
+    height: 50px;
+    margin: 0px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+  }
+  body .postBox .imgContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .postBox .imgContainer img {
+    border-radius: 50%;
+  }
+  body .postBox .form {
+    flex-grow: 7;
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+  }
+  body .postBox .form #FileUpload {
+    display: none;
+  }
+  body .postBox .form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .postBox .form label img {
+    margin: 0px 10px;
+  }
+  body .postBox .form label img:hover {
+    cursor: pointer;
+  }
+  body .postBox .form input[type=text] {
+    -webkit-appearance: none;
+    width: 300px;
+    color: #f9f9f9;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #181818;
+    border-radius: 0px;
+    padding: 10px;
+  }
+  body .postBox .form input[type=submit] {
+    -webkit-appearance: none;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0px;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  body .postBox .form input[type=submit]:hover {
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 2400px) {
+  body .postBox {
+    height: 50px;
+    margin: 0px 24px;
+    max-width: 852px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+  }
+  body .postBox .imgContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .postBox .imgContainer img {
+    border-radius: 50%;
+  }
+  body .postBox .form {
+    flex-grow: 7;
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+  }
+  body .postBox .form #FileUpload {
+    display: none;
+  }
+  body .postBox .form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .postBox .form label img {
+    margin: 0px 10px;
+  }
+  body .postBox .form label img:hover {
+    cursor: pointer;
+  }
+  body .postBox .form input[type=text] {
+    -webkit-appearance: none;
+    width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0px;
+    color: #f9f9f9;
+    background-color: #181818;
+    padding: 10px;
+  }
+  body .postBox .form input[type=submit] {
+    -webkit-appearance: none;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 0px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  body .postBox .form input[type=submit]:hover {
+    cursor: pointer;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
