@@ -69,7 +69,7 @@ $(document).ready(() => {
 
     setTimeout(() => {
       LoadPosts()
-    }, 100)
+    }, 175)
 
   });
 
