@@ -163,8 +163,14 @@ def index():
             if User[1] == session['email']:
                 UserID = User[0]
 
+        deletablePosts = []
+
+        for Post in Read(Database=Database, Cursor=Cursor, table="Posts"):
+            if Post[2] == UserID:
+                deletablePosts += [Post[0]]
+
         Database.close()
-        return render_template('index.html', picture=session['picture'], name=session['name'], id=UserID)
+        return render_template('index.html', picture=session['picture'], name=session['name'], id=UserID, deletablePosts=deletablePosts)
     return redirect('login')
 
 if __name__ == '__main__':

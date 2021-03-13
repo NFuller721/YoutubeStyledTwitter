@@ -60,6 +60,37 @@ body
         justify-content: center
         div
           margin: 5px
+      .Ellipsis
+        flex-grow: 1
+        display: flex
+        justify-content: flex-end
+        .optionsBox
+          display: none
+          position: absolute
+          height: 30px
+          margin: 0px 40px
+          width: 100px
+          background-color: #303030
+          input[type='button']
+            border: 0px
+            border-radius: 0px
+            background-color: transparent
+            height: 100%
+            width: 100%
+            color: $iconColor
+            &:hover
+              cursor: pointer
+        input[type='image']
+          display: none
+          height: 24px
+          width: 24px
+          &:hover
+            cursor: pointer
+      &:hover
+        .Ellipsis
+          input[type='image']
+            display: block
+
   @media screen and (max-width: 600px)
     #NameText
       display: none
