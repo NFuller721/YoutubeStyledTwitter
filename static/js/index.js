@@ -66,7 +66,10 @@ $(document).ready(() => {
 
     CreatePost($("#PostText").val(), $("#UserID").val())
     $("#PostText").val("")
-    LoadPosts()
+
+    setTimeout(() => {
+      LoadPosts()
+    }, 100)
 
   });
 

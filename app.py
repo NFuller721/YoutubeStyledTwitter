@@ -30,8 +30,8 @@ App.register_blueprint(Auth)
 def Api(Key, Option):
     if request.method == "POST":
         if Key == "34567654":
-            Database, Cursor = Start()
             if Option == "CreatePost":
+                Database, Cursor = Start()
                 postText = request.form['postText']
                 userID = int(request.form['userID'])
                 likes = 0
@@ -50,11 +50,12 @@ def Api(Key, Option):
                         "likes": likes
                     })
 
-                    Database.close()
+                    Database = "Null"
                     return {"Response": "Created Post"}
-                Database.close()
+                Database = "Null"
                 return {"Response": "Not logged in as this user"}
             if Option == "ReadPost":
+                Database, Cursor = Start()
                 id = int(request.form['id'])
 
                 Post = Read(Database=Database, Cursor=Cursor, table="Posts", id=id)[0]
@@ -69,9 +70,10 @@ def Api(Key, Option):
                     "userName": User[3]
                 }
 
-                Database.close()
+                Database = "Null"
                 return {"Response": {"Post": Post}}
             if Option == "ReadAllPosts":
+                Database, Cursor = Start()
                 PostData = Read(Database=Database, Cursor=Cursor, table="Posts")
 
                 Posts = []
@@ -88,9 +90,10 @@ def Api(Key, Option):
                         "userName": User[3]
                     }]
 
-                Database.close()
+                Database = "Null"
                 return {"Response": {"Posts": Posts}}
             if Option == "UpdatePost":
+                Database, Cursor = Start()
                 id = int(request.form['id'])
                 postText = request.form['postText']
 
@@ -108,11 +111,12 @@ def Api(Key, Option):
                         "postText": postText
                     })
 
-                    Database.close()
+                    Database = "Null"
                     return {"Response": "Updated Post"}
-                Database.close()
+                Database = "Null"
                 return {"Error": "Not logged in as this user"}
             if Option == "DeletePost":
+                Database, Cursor = Start()
                 id = int(request.form['id'])
 
                 UserID = Read(Database=Database, Cursor=Cursor, table="Posts", id=id)[0][2]
@@ -121,22 +125,23 @@ def Api(Key, Option):
                 if session['email'] == Email:
                     Delete(Database=Database, Cursor=Cursor, table="Posts", id=id)
 
-                    Database.close()
+                    Database = "Null"
                     return {"Response": "Deleted Post"}
-                Database.close()
+                Database = "Null"
                 return {"Error": "Not logged in as this user"}
             if Option == "DeleteAllPosts":
+                Database, Cursor = Start()
                 AdminUsername = request.form['AdminUsername']
                 AdminPassword = request.form['AdminPassword']
 
                 if AdminUsername == "ahhgfdyueighrfegfvw" and AdminPassword == "yfctgwhegfvcuywhjefgwf":
                     Delete(Database=Database, Cursor=Cursor, table="Posts", id="All")
 
-                    Database.close()
+                    Database = "Null"
                     return {"Response": "Deleted All Posts"}
-                Database.close()
+                Database = "Null"
                 return {"Error": "Wrong Username and Password"}
-            Database.close()
+            Database = "Null"
             return {"Error": "No function with that name"}
         return {"Error": "Wrong Key"}
     return {"Error": "No request"}
