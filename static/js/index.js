@@ -24,11 +24,11 @@ let DeletePost = (id) => {
   });
 }
 
-$("#Upload").click(() => {
-  CreatePost($("#PostText").val(), $("#UserID").val())
-});
 
 $(document).ready(() => {
+  $("#Upload").click(() => {
+    CreatePost($("#PostText").val(), $("#UserID").val())
+  });
 
   ReadAllPosts().done((data) => {
     let Posts = data.Response.Posts;
