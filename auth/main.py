@@ -9,7 +9,7 @@ Auth = Blueprint(
 
 Connection = Connection(
     host="127.0.0.1",
-    username="root",
+    username="Noah721",
     password="Satchel21",
     databaseName="YoutubeStyledTwitter"
 )

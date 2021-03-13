@@ -5,7 +5,7 @@ from MySQLPackage import *
 from auth.main import Auth
 
 
-Connection = Connection(host="127.0.0.1", username="root", password="Satchel21", databaseName="YoutubeStyledTwitter")
+Connection = Connection(host="127.0.0.1", username="Noah721", password="Satchel21", databaseName="YoutubeStyledTwitter")
 
 def Start():
     Connection.run()
