@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: Arial;
+}
+
+body {
+  background-color: #181818;
+}
+body header {
+  height: 50px;
+  background-color: rgba(33, 33, 33, 0.98);
+  display: flex;
+  align-items: center;
+}
+body header a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #f9f9f9;
+  margin: 20px;
+}
+body a {
+  font-weight: 400;
+  font-size: 14px;
+  color: #3890db;
+  text-decoration: none;
+}
+body p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #f9f9f9;
+}
+
+/*# sourceMappingURL=_main.css.map */

@@ -24,6 +24,7 @@ def Start():
 @Hashtags.route('/<Hashtag>')
 def index(Hashtag):
     if 'LoggedIn' in session:
+        # Deletable posts
         Database, Cursor = Start()
         Users = Read(Database=Database, Cursor=Cursor, table="Users")
 

@@ -1,0 +1,29 @@
+@use 'variables'
+
+*
+  margin: 0
+  padding: 0
+  outline: none
+  font-family: variables.$font
+
+body
+  background-color: variables.$bodyColor
+  header
+    height: 50px
+    background-color: variables.$headerColor
+    display: flex
+    align-items: center
+    a
+      font-size: variables.$textSize
+      font-weight: variables.$textWeight
+      color: variables.$textColor
+      margin: 20px
+  a
+    font-weight: variables.$textWeight
+    font-size: variables.$textSize
+    color: variables.$linkColor
+    text-decoration: none
+  p
+    font-weight: variables.$textWeight
+    font-size: variables.$textSize
+    color: variables.$textColor

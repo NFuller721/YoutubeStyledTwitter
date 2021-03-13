@@ -1,0 +1,76 @@
+body .Posts {
+  display: grid;
+  grid-auto-rows: 75px;
+  margin: 24px;
+  height: 525px;
+  max-width: 852px;
+  overflow: scroll;
+}
+body .Posts .Post {
+  display: flex;
+  justify-content: flex-start;
+}
+body .Posts .Post .UserPicture {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .Posts .Post .UserPicture img {
+  border-radius: 50%;
+}
+body .Posts .Post .PostContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .Posts .Post .PostContent div {
+  margin: 5px;
+}
+body .Posts .Post .PostContent div a {
+  margin: 2px;
+}
+body .Posts .Post .Ellipsis {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+body .Posts .Post .Ellipsis .optionsBox {
+  display: none;
+  position: absolute;
+  height: 30px;
+  margin: 0px 40px;
+  width: 100px;
+  background-color: #303030;
+}
+body .Posts .Post .Ellipsis .optionsBox input[type=button] {
+  border: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.5);
+}
+body .Posts .Post .Ellipsis .optionsBox input[type=button]:hover {
+  cursor: pointer;
+}
+body .Posts .Post .Ellipsis input[type=image] {
+  display: none;
+  height: 24px;
+  width: 24px;
+}
+body .Posts .Post .Ellipsis input[type=image]:hover {
+  cursor: pointer;
+}
+body .Posts .Post:hover .Ellipsis input[type=image] {
+  display: block;
+}
+
+@media screen and (min-width: 0px) and (max-width: 380px) {
+  .optionsBox {
+    width: 30px;
+    right: 30px;
+  }
+}
+
+/*# sourceMappingURL=_hashtags.css.map */

@@ -1,0 +1,63 @@
+@use 'variables'
+
+body
+  .Posts
+    display: grid
+    grid-auto-rows: 75px
+    margin: 24px
+    height: 525px
+    max-width: 852px
+    overflow: scroll
+    .Post
+      display: flex
+      justify-content: flex-start
+      .UserPicture
+        margin: 10px
+        display: flex
+        align-items: center
+        justify-content: center
+        img
+          border-radius: 50%
+      .PostContent
+        display: flex
+        flex-direction: column
+        justify-content: center
+        div
+          margin: 5px
+          a
+            margin: 2px
+      .Ellipsis
+        flex-grow: 1
+        display: flex
+        justify-content: flex-end
+        .optionsBox
+          display: none
+          position: absolute
+          height: 30px
+          margin: 0px 40px
+          width: 100px
+          background-color: #303030
+          input[type='button']
+            border: 0px
+            border-radius: 0px
+            background-color: transparent
+            height: 100%
+            width: 100%
+            color: variables.$iconColor
+            &:hover
+              cursor: pointer
+        input[type='image']
+          display: none
+          height: 24px
+          width: 24px
+          &:hover
+            cursor: pointer
+      &:hover
+        .Ellipsis
+          input[type='image']
+            display: block
+
+@media screen and (min-width: 0px) and(max-width: variables.$phoneScreen)
+  .optionsBox
+    width: 30px
+    right: 30px

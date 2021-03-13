@@ -1,37 +1,29 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <title>Youtube Styled Twitter</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script type="text/javascript">
-      let thisUserId = {{id}}
-      let deletablePosts = {{deletablePosts}}
-    </script>
-    <script src="{{ url_for('static', filename='js/index.js') }}" charset="utf-8"></script>
-  </head>
-  <body>
-    <header>
-      <a href="/">Home</a>
-    </header>
-    <div class="postBox">
-      <div class="imgContainer">
-        <img id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="32" width="32" src="{{picture}}">
-        <p id="NameText">{{name}}</p>
-      </div>
-      <div class="form">
-        <input type="text" placeholder="Post" id="PostText">
-        <input type="submit" value="Send" id="Upload">
-        <input type="file" id="FileUpload">
-        <input type="hidden" id="UserID" value="{{id}}">
-        <label for="FileUpload">
-          <img src="https://img.icons8.com/pastel-glyph/24/303030/attachment-file--v1.png"/>
-        </label>
-      </div>
+{% extends 'layout/base.html' %}
+{% block Head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/_index.css') }}">
+  <script type="text/javascript">
+    let thisUserId = {{id}}
+    let deletablePosts = {{deletablePosts}}
+  </script>
+  <script src="{{ url_for('static', filename='js/index.js') }}" charset="utf-8"></script>
+{% endblock %}
+{% block Body %}
+  <div class="postBox">
+    <div class="imgContainer">
+      <img id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="32" width="32" src="{{picture}}">
+      <p id="NameText">{{name}}</p>
     </div>
-    <div class="Posts">
+    <div class="form">
+      <input type="text" placeholder="Post" id="PostText">
+      <input type="submit" value="Send" id="Upload">
+      <input type="file" id="FileUpload">
+      <input type="hidden" id="UserID" value="{{id}}">
+      <label for="FileUpload">
+        <img src="https://img.icons8.com/pastel-glyph/24/303030/attachment-file--v1.png"/>
+      </label>
+    </div>
+  </div>
+  <div class="Posts">
 
-    </div>
-  </body>
-</html>
+  </div>
+{% endblock %}

@@ -1,0 +1,204 @@
+@use 'variables'
+
+body
+  .Posts
+    display: grid
+    grid-auto-rows: 75px
+    margin: 24px
+    height: 525px
+    max-width: 852px
+    overflow: scroll
+    .Post
+      display: flex
+      justify-content: flex-start
+      .UserPicture
+        margin: 10px
+        display: flex
+        align-items: center
+        justify-content: center
+        img
+          border-radius: 50%
+      .PostContent
+        display: flex
+        flex-direction: column
+        justify-content: center
+        div
+          margin: 5px
+          a
+            margin: 2px
+      .Ellipsis
+        flex-grow: 1
+        display: flex
+        justify-content: flex-end
+        .optionsBox
+          display: none
+          position: absolute
+          height: 30px
+          margin: 0px 40px
+          width: 100px
+          background-color: #303030
+          input[type='button']
+            border: 0px
+            border-radius: 0px
+            background-color: transparent
+            height: 100%
+            width: 100%
+            color: variables.$iconColor
+            &:hover
+              cursor: pointer
+        input[type='image']
+          display: none
+          height: 24px
+          width: 24px
+          &:hover
+            cursor: pointer
+      &:hover
+        .Ellipsis
+          input[type='image']
+            display: block
+
+@media screen and (min-width: 0px) and(max-width: variables.$phoneScreen)
+  .optionsBox
+    width: 30px
+    right: 30px
+
+@media screen and (max-width: 600px)
+  #NameText
+    display: none
+@media screen and (min-width: 0px) and(max-width: variables.$phoneScreen)
+  .postBox
+    height: 50px
+    margin: 0px 12px
+    max-width: 355px
+    border-bottom: 1px solid variables.$border
+    display: flex
+    .imgContainer
+      flex-grow: 1
+      display: flex
+      justify-content: space-around
+      align-items: center
+      img
+        border-radius: 50%
+    .form
+      flex-grow: 6
+      display: flex
+      padding: 10px
+      justify-content: flex-end
+      #FileUpload
+        display: none
+      label
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+          margin: 0px 10px
+          &:hover
+            cursor: pointer
+      input[type='text']
+        -webkit-appearance: none
+        width: 150px
+        border: 1px solid variables.$border
+        background-color: variables.$bodyColor
+        color: variables.$textColor
+        border-radius: 0px
+        padding: 10px
+      input[type='submit']
+        -webkit-appearance: none
+        width: 75px
+        background-color: variables.$border
+        border-radius: 0px
+        border: none
+        color: variables.$iconColor
+        &:hover
+          cursor: pointer
+@media screen and (min-width: variables.$phoneScreen) and(max-width: variables.$smallScreen)
+  .postBox
+    height: 50px
+    margin: 0px 24px
+    border-bottom: 1px solid variables.$border
+    display: flex
+    .imgContainer
+      flex-grow: 1
+      display: flex
+      justify-content: space-around
+      align-items: center
+      img
+        border-radius: 50%
+    .form
+      flex-grow: 6
+      display: flex
+      padding: 10px
+      justify-content: flex-end
+      #FileUpload
+        display: none
+      label
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+          margin: 0px 10px
+          &:hover
+            cursor: pointer
+      input[type='text']
+        -webkit-appearance: none
+        width: 100%
+        color: variables.$textColor
+        border: 1px solid variables.$border
+        background-color: variables.$bodyColor
+        border-radius: 0px
+        padding: 10px
+      input[type='submit']
+        -webkit-appearance: none
+        width: 100px
+        background-color: variables.$border
+        border-radius: 0px
+        border: none
+        color: variables.$iconColor
+        &:hover
+          cursor: pointer
+@media screen and (min-width: variables.$smallScreen) and (max-width: variables.$mediumScreen)
+    .postBox
+      height: 50px
+      margin: 0px 24px
+      max-width: 852px
+      border-bottom: 1px solid variables.$border
+      display: flex
+      .imgContainer
+        flex-grow: 1
+        display: flex
+        justify-content: space-around
+        align-items: center
+        img
+          border-radius: 50%
+      .form
+        flex-grow: 6
+        display: flex
+        padding: 10px
+        justify-content: flex-end
+        #FileUpload
+          display: none
+        label
+          display: flex
+          justify-content: center
+          align-items: center
+          img
+            margin: 0px 10px
+            &:hover
+              cursor: pointer
+        input[type='text']
+          -webkit-appearance: none
+          width: 100%
+          border: 1px solid variables.$border
+          border-radius: 0px
+          color: variables.$textColor
+          background-color: variables.$bodyColor
+          padding: 10px
+        input[type='submit']
+          -webkit-appearance: none
+          width: 100px
+          background-color: variables.$border
+          border: none
+          border-radius: 0px
+          color: variables.$iconColor
+          &:hover
+            cursor: pointer
