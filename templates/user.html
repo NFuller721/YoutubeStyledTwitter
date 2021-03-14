@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+{% block Head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/_user.css') }}">
+  <script type="text/javascript">
+    let thisUserId = {{id}}
+    let deletablePosts = {{deletablePosts}}
+    let userid = {{userid}}
+    console.log(userid)
+  </script>
+  <script src="{{ url_for('static', filename='js/user.js') }}" charset="utf-8"></script>
+{% endblock %}
+{% block Body %}
+  <div class="Posts">
+
+  </div>
+{% endblock %}

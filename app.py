@@ -4,6 +4,7 @@ from MySQLPackage import *
 # Blueprints
 from auth.main import Auth
 from Hashtags.main import Hashtags
+from User.main import User
 
 
 Connection = Connection(
@@ -27,6 +28,7 @@ App.secret_key = 'secretKey'
 # Register Blueprints
 App.register_blueprint(Auth)
 App.register_blueprint(Hashtags, url_prefix="/Hashtags")
+App.register_blueprint(User, url_prefix="/User")
 
 @App.route('/Api/<Key>/<Option>', methods=["GET", "POST"])
 def Api(Key, Option):
