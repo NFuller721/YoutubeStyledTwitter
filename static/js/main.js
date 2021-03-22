@@ -36,6 +36,23 @@ let DeletePostButton = (id) => {
   }, 175)
 }
 
+let EditPostButton = (id) => {
+
+  // Remove text
+  $(`.PostText#Post-${id}`).find(".content").find("p").remove()
+
+  // Define text in post
+  let Text = $(`.PostText#Post-${id}`).find(".content").find("input:hidden").val()
+
+  // Make input with value of Text
+  $(`.PostText#Post-${id}`).find(".content").append(`<input type="text" value="${Text}">`)
+  $(`.PostText#Post-${id}`).find(".content").append(`<input type="button" value="Update">`)
+}
+
+let EditPostSubmit = () => {
+
+}
+
 $(document).ready(() => {
   $(document).mouseup((e) => {
       var container = $(".optionsBox");

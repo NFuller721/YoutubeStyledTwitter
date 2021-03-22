@@ -174,7 +174,13 @@ def index():
                 deletablePosts += [Post[0]]
 
         Database.close()
-        return render_template('index.html', picture=session['picture'], name=session['name'], id=UserID, deletablePosts=deletablePosts)
+        return render_template(
+            'index.html',
+            picture=session['picture'],
+            name=session['name'],
+            id=UserID,
+            deletablePosts=deletablePosts
+        )
     return redirect('login')
 
 if __name__ == '__main__':

@@ -36,6 +36,7 @@ let LoadPosts = () => {
         <div class="Ellipsis">
           <input type='image' onclick="Ellipsis(${Post.id})" src="https://img.icons8.com/ios-filled/24/303030/ellipsis.png"/>
           <div class='optionsBox' id="${Post.id}">
+            <input type="button" onclick="EditPostButton(${Post.id})" value="Edit">
             <input type="button" onclick="DeletePostButton(${Post.id})" value="Delete">
           </div>
         </div>
@@ -53,10 +54,15 @@ let LoadPosts = () => {
             <div class="PostUsername">
               <p>${Post.userName}</p>
             </div>
-            <div class="PostText">
-              <p>${TextArrayWithoutLinks.join(" ")}</p>
-              ${LinkText}
-              ${Hashtags}
+            <div class="PostText" id="Post-${Post.id}">
+              <div class="content">
+                <p>${TextArrayWithoutLinks.join(" ")}</p>
+                <input id="postText" type="hidden" value="${TextArrayWithoutLinks.join(" ")}"/>
+              </div>
+              <div>
+                ${LinkText}
+                ${Hashtags}
+              </div>
             </div>
           </div>
           ${EllipsisBox}

@@ -26,6 +26,17 @@ body
           margin: 5px
           a
             margin: 2px
+        .PostText
+          .content
+            input[type="text"]
+              width: 200px
+              background-color: transparent
+              border: none
+              border-bottom: 1px solid variables.$border
+              color: variables.$textColor
+              padding: 5px
+              &:focus
+                border-bottom: 1px solid variables.$youtubeRed
       .Ellipsis
         flex-grow: 1
         display: flex
@@ -33,7 +44,6 @@ body
         .optionsBox
           display: none
           position: absolute
-          height: 30px
           margin: 0px 40px
           width: 100px
           background-color: #303030
@@ -41,9 +51,10 @@ body
             border: 0px
             border-radius: 0px
             background-color: transparent
-            height: 100%
+            height: 30px
             width: 100%
             color: variables.$iconColor
+            border: 1px solid rgba(0,0,0,.15)
             &:hover
               cursor: pointer
         input[type='image']
