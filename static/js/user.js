@@ -21,8 +21,12 @@ let LoadPosts = () => {
         let Word = TextArray[j];
 
         if (Word.slice(0,7) == "http://" || Word.slice(0,8) == "https://") {
+          Word.replace("<", "")
+          Word.replace(">", "")
           LinkText = LinkText.concat(`<a href="${Word}">${Word}</a>`)
         } else if (Word.slice(0,1) == "#") {
+          Word.replace("<", "")
+          Word.replace(">", "")
           Hashtags = Hashtags.concat(`<a href="/Hashtags/${Word.slice(1)}">${Word}</a>`)
         } else {
           TextArrayWithoutLinks.push(Word);
@@ -56,7 +60,7 @@ let LoadPosts = () => {
                 <p>${Post.userName}</p>
               </div>
               <div class="PostText">
-                <p>${TextArrayWithoutLinks.join(" ")}</p>
+                <p id="Post-${Post.id}"></p>
                 ${LinkText}
                 ${Hashtags}
               </div>
@@ -64,6 +68,7 @@ let LoadPosts = () => {
             ${EllipsisBox}
           </div>
           `);
+        $(`#${Post.id}`).val(`${TextArrayWithoutLinks.join(" ")}`);
       }
 
     }
