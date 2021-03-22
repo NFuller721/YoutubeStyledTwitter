@@ -53,7 +53,7 @@ let LoadPosts = () => {
         $(".Posts").append(`
           <div class="Post">
             <div class="UserPicture">
-            <img id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="32" width="32" src="${Post.userPicture}">
+              <img id="img" class="style-scope yt-img-shadow" alt="Avatar image" height="32" width="32" src="${Post.userPicture}">
             </div>
             <div class="PostContent">
               <div class="PostUsername">
@@ -68,7 +68,7 @@ let LoadPosts = () => {
             ${EllipsisBox}
           </div>
           `);
-        $(`#${Post.id}`).val(`${TextArrayWithoutLinks.join(" ")}`);
+        $(`#${Post.id}`).text(`${TextArrayWithoutLinks.join(" ")}`);
       }
 
     }
