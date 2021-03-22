@@ -68,7 +68,7 @@ let LoadPosts = () => {
             ${EllipsisBox}
           </div>
           `);
-        $(`#${Post.id}`).text(`${TextArrayWithoutLinks.join(" ")}`);
+        $(`#Post-${Post.id}`).text(`${TextArrayWithoutLinks.join(" ")}`);
       }
 
     }
